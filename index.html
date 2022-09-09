@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+  <title>Basecamp</title>
+  <style>
+    /* ##########     Defaluts     ############ */
+    nav,
+    header,
+    footer {
+      display: block;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      line-height: 1;
+      margin: 0;
+    }
+
+    label {
+      font-size: 35px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    article p {
+      font-size: 25px;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      margin: auto;
+      padding: top 4%;
+      padding-bottom: 4%;
+    }
+
+    .row {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .row::after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+
+    .col-1 {
+      width: 8.33%;
+    }
+
+    .col-2 {
+      width: 16.663%;
+    }
+
+    .col-3 {
+      width: 25%;
+    }
+
+    .col-4 {
+      width: 33.33%;
+    }
+
+    .col-5 {
+      width: 41.66%;
+    }
+
+    .col-6 {
+      width: 50%;
+    }
+
+    .col-7 {
+      width: 58.33%;
+    }
+
+    .col-8 {
+      width: 66.66%;
+    }
+
+    .col-9 {
+      width: 75%;
+    }
+
+    .col-10 {
+      width: 83.33%;
+    }
+
+    .col-11 {
+      width: 91.66%;
+    }
+
+    .col-12 {
+      width: 100%;
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* ############     Nav Bar     ############# */
+
+    nav {
+      width: 100%;
+      margin: 0;
+    }
+
+    nav ul {
+      background-color: #eee;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul.topnav li {
+      list-style-type: none;
+      float: left;
+    }
+
+    ul.topnav li.topnav-right {
+      float: right;
+    }
+
+    ul.topnav li a {
+      display: block;
+      text-decoration: none;
+      min-height: 16px;
+      text-align: center;
+      padding: 14px;
+      text-transform: uppercase;
+      color: #666;
+    }
+
+    ul.topnav li a:hover {
+      background-color: #4e204d;
+      color: #fff;
+    }
+
+    ul.topnav li.dropdownIcon {
+      display: none;
+    }
+
+    /* ############# Custom Styles ############## */
+
+    #section-1-gradient {
+      background: #970D1A;
+      background: -webkit-linear-gradient(#970D1A, #4e204d);
+      background: -o-linear-gradient(#970D1A, #4e204d);
+      background: -moz-linear-gradient(#970D1A, #4e204d);
+      background: linear-gradient(#970D1A, #4e204d);
+    }
+
+    div.box {
+      text-align: center;
+      margin: 24px;
+      padding: 36px 24px 40px 24px;
+      background-color: #fff;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .15),
+        0 2px 3px 0 rgba(0, 0, 0, .1);
+    }
+
+    div.slopeIcon img {
+      display: block;
+      margin: auto;
+      box-shadow: -2px -2px 20px 2px rgb(0, 0, 0, .15), 2px 2px 17px 2px rgb(0, 0, 0, .1);
+    }
+
+    button {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      background-color: #4e204d;
+      padding: 10px 50px;
+      display: block;
+      text-align: center;
+      margin: 5px;
+      border-radius: 7px;
+    }
+
+    button.learnMore {
+      display: block;
+      margin: auto;
+    }
+
+    div.leftSide-col {
+      margin-left: 30%;
+    }
+
+    div.rightSide-col {
+      margin-left: 15%;
+    }
+
+    h1.large {
+      color: #fff;
+      font-size: 45px;
+      margin: 0;
+      line-height: 70px;
+    }
+
+    h1.section2Header {
+      font-size: 45px;
+      text-align: center;
+    }
+
+    form h2 {
+      color: #fff;
+
+    }
+
+    input[type="text"] {
+      font-size: 20px;
+      width: 400px;
+      min-width: 100px;
+      padding: 5px;
+      border-radius: 7px;
+    }
+
+    footer.footsy {
+      background-color: #666;
+      padding-left: 10%;
+    }
+
+    footer.footsy h1 {
+      color: #fff;
+      font-size: 35px;
+    }
+
+    footer.footsy ul {
+      list-style: none;
+      text-align: left;
+      padding-left: 0;
+    }
+
+    footer.footsy ul li {
+      color: #fff;
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    /* ############### Mobile ################# */
+
+    @media screen and (max-width: 680px) {
+      ul.topnav li:not(:nth-child(1)) {
+        display: none;
+      }
+
+      ul.topnav li.dropdownIcon {
+        display: block;
+        float: right;
+      }
+
+      ul.topnav.responsive li.dropdownIcon {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      ul.topnav.responsive {
+        position: relative;
+      }
+
+      ul.topnav.responsive li {
+        display: inline;
+        float: none;
+      }
+
+      ul.topnav.responsive li a {
+        display: block;
+        text-align: left;
+      }
+
+      h1.section2Header {
+        font-size: 45px;
+      }
+
+      article p {
+        font-size: 25px;
+      }
+
+      .col-7,
+      .col-6,
+      .col-5,
+      .col-4 {
+        width: 100%;
+        margin: 0;
+      }
+
+      div.mobileStack {
+        width: 50%;
+        display: block;
+
+      }
+
+      div.box {
+        padding: 5px;
+        display: block;
+      }
+
+      div.slopeIcon {
+        margin: 10px;
+      }
+
+      div.slopeIcon img {
+        width: 100%;
+      }
+
+      div.leftSide-col,
+      div.rightSide-col {
+        margin: 15px;
+      }
+
+      input[type="text"] {
+        width: 350px;
+      }
+
+      .imageContainer img {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul class="topnav" id="dropdownClick">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+      <li class="topnav-right"><a href="#signup">Sign Up</a></li>
+      <li class="topnav-right"><a href="#signin">Sign In</a></li>
+      <li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
+    </ul>
+  </nav>
+
+  <div class="container" id="section-1-gradient">
+    <div class="row">
+      <div class="col-6">
+        <div class="leftSide-col">
+          <h1 class="large">Basecamp</h1>
+          <h1 class="large">Doubling down on simple and straightforward</h1>
+        </div>
+        <form>
+          <div class="leftSide-col">
+            <h2>Username</h2>
+            <input class="inputbox" type="text" name="username" placeholder="Username">
+            <h2>Password</h2>
+            <input class="inputbox" type="text" name="password" placeholder="Password">
+          </div>
+        </form>
+      </div>
+      <div class="col-6">
+        <div class="rightSide-col">
+          <div class="imageContainer"></div>
+          <img src="coder-new.png" alt="coder" height="500px" width="500px">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header>
+    <h1 class="section2Header">The Standards of Awesomeness</h1>
+  </header>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <div class="box">
+          <div class="icon">
+            <img src="devIcon.png">
+          </div>
+          <label>Chat with Us</label>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore.</p>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="box">
+          <div class="icon">
+            <img src="devIcon.png">
+          </div>
+          <label>Learn to Code</label>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore.</p>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="box">
+          <div class="icon">
+            <img src="devIcon.png">
+          </div>
+          <label>Best Build</label>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <button class="learnMore">Learn More</button>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-7">
+        <article>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+            et
+            dolore.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+            et
+            dolore.
+          </p>
+        </article>
+      </div>
+      <div class="col-5">
+        <div class="slopeIcon">
+          <img src="download.jfif">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footsy">
+    <div class="row">
+      <div class="col-3 mobileStack">
+        <h1>Main Navigation</h1>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Academics</li>
+        </ul>
+      </div>
+      <div class="col-3 mobileStack">
+        <h1>Information</h1>
+        <ul>
+          <li>How To Apply</li>
+          <li>Dates & Deadlines</li>
+          <li>Student Activites</li>
+        </ul>
+      </div>
+      <div class="col-3 mobileStack">
+        <h1>Quick Links</h1>
+        <ul>
+          <li>Apply Now</li>
+          <li>Blog</li>
+          <li>Teachers</li>
+        </ul>
+      </div>
+      <div class="col-3 mobileStack">
+        <h1>Resources</h1>
+        <ul>
+          <li>Help Center</li>
+          <li>Ebook Library</li>
+          <li>Free Themes</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function dropdownMenu() {
+      var x = document.getElementById(" dropdownClick");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+        // change top nav to topnav.responsive
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
+</body>
+
+</html>
